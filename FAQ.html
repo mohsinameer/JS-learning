@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .main {
+            width: 80vw;
+            height: 80vh;
+            background-color: white;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0px 0px 10px 1px #ccc;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .main h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .faqContent {
+            margin-top: 20px;
+            text-align: left;
+            border: 0.7px solid #ccc;
+        }
+
+        .faqContent h2 {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-bottom: 0.7px solid #ccc;
+            cursor: pointer;
+        }
+
+        .faqContent h2 span {
+            float: right;
+            cursor: pointer;
+        }
+
+        .faqContent p {
+            font-size: 18px;
+            line-height: 25px;
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .faqContentShow {
+            padding: 10px 20px;
+            max-height: 500px !important;
+            opacity: 1 !important;
+            transition: 0.5s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>FAQ</h1>
+        <div class="faqContent">
+            <h2>What is the purpose of this website? <span>+</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo numquam quae facere, ea eveniet sit nihil
+                aperiam, tenetur quibusdam cum quidem quia animi, vero placeat! Repellat perferendis odio dolore totam?
+            </p>
+        </div>
+    </div>
+</body>
+
+
+
+<!-- JavaScript  -->
+
+<script>
+
+    let faq = document.querySelectorAll(".faqContent h2");
+    let faqContent = document.querySelectorAll(".faqContent p");
+
+    for (let i = 0; i < faq.length; i++) {
+        faq[i].addEventListener("click", function () {
+            this.classList.toggle("faqContentShow");
+            faqContent[i].classList.toggle("faqContentShow");
+        })
+    }
+
+
+</script>
+</html>

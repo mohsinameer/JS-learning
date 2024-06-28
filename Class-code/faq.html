@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+            padding: 30px 0px;
+        }
+
+        .faqOuter{
+            width: 1170px;
+            margin: auto;
+        }
+        .faqItems{
+            border: 1px solid red;
+            margin-top: 10px;
+        }
+
+        .faqItems h2{
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            background-color: azure;
+        }
+        .faqItems p{
+            
+            line-height: 25px;
+            max-height: 0px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .activeAns{
+            max-height: 500px !important;
+            opacity: 1 !important;
+            padding: 10px;
+        }
+        .faqItems span{
+            position: absolute;
+            right: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Faq</h1>
+
+    <div class="faqOuter">
+        <div class="faqItems">
+            <h2>1 Why is the moon sometimes out during the day?
+                <span>+</span>
+
+            </h2>
+            <p > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut.
+                Ut tortor pretium viverra suspendisse potenti.</p>
+        </div>
+        <div class="faqItems">
+            <h2>2 Why is the moon sometimes out during the day?
+                <span>+</span>
+
+            </h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut.
+                Ut tortor pretium viverra suspendisse potenti.</p>
+        </div>
+        <div class="faqItems">
+            <h2>3 Why is the moon sometimes out during the day?
+
+                <span>+</span>
+            </h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut.
+                Ut tortor pretium viverra suspendisse potenti.</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    let faqOuter=document.querySelector(".faqOuter");
+    faqOuter.addEventListener("click",(event)=>{
+        if(event.target.tagName=="H2"){
+            event.target.nextElementSibling.classList.toggle('activeAns')
+        }
+    })
+</script>
+</html>

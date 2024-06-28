@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        #main {
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0px 0px 10px 1px #ccc;
+        }
+        .add-class{
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .add-class>h5{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+
+        }
+
+        .btn-dev {
+            margin: auto;
+            text-align: center;
+        }
+
+        #btn {
+            width: 100px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 1px #ccc;
+            cursor: pointer;
+            align-items: center;
+        }
+        #btn1 {
+            width: 100px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 1px #ccc;
+            cursor: pointer;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <h5>Welcome To India</h5>
+    </div>
+    <div class="btn-dev">
+        <button id="btn">Click Me</button>
+        <button id="btn1">Add Class</button>
+    </div>
+
+</body>
+
+<script>
+
+    let main = document.getElementById("main");
+    let btn = document.getElementById("btn");
+    let btn1 = document.getElementById("btn1");
+
+    btn.addEventListener("click",()=> {
+
+        // Adding Style with .style
+
+        main.style.backgroundColor = "red";
+    })
+
+    //  Adding Class With .classList.add
+
+    btn1.addEventListener("click",()=> {
+
+        main.classList.add("add-class");
+    })
+
+    // Remove Class With .classList.Remove 
+
+    // btn1.addEventListener("click",()=> {
+
+    //     main.classList.remove("add-class");
+    // })
+
+
+</script>
+
+</html>

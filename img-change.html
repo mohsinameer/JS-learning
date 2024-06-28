@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Change</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 1000px;
+            height: 700px;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: 0 0 10px #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #img1 {
+            width: 750px;
+            height: 450px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        #img2,
+        #img3,
+        #img4 {
+            width: 30%;
+            height: 25%;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="https://cdn.prod.website-files.com/619e8d2e8bd4838a9340a810/64c590c754d6bc13ebd90cbc_ai_product_photo_styles.webp"
+            alt="" id="img1" onmouseover="changeImg(this)">
+        <img src="https://imgv3.fotor.com/images/homepage-feature-card/ai-product-photography_0_2024-03-22-082931_fnbk.jpg"
+            alt="" id="img2" onmouseover="changeImg(this)">
+        <img src="https://img.freepik.com/premium-photo/cosmetic-bottle-mockup-product-photography_919857-2979.jpg"
+            alt="" id="img3" onmouseover="changeImg(this)">
+        <img src="https://img.freepik.com/premium-photo/cosmetic-product-template-photo-with-plain-beauty-container-view_529119-635.jpg"
+            alt="" id="img4" onmouseover="changeImg(this)">
+    </div>
+</body>
+<script>
+    let img1 = document.querySelector("#img1");
+    function changeImg(currentImg){
+        let currentImgSrc=currentImg.src;
+        img1.src=currentImgSrc;
+    }
+</script>
+</html>

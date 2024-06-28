@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+</head>
+<body>
+    <label for="">Hindi</label>
+    <input type="number" id="hindi">
+    <label for="">English</label>
+    <input type="number" id="english">
+    <label for="">Maths</label>
+    <input type="number" id="maths">
+    <button id="btn" onclick="check()">Submit</button>
+    <input type="text" id="sum">
+    <input type="text" id="per">
+    <input type="text" id="grade">
+</body>
+<script>
+    let hindi = document.getElementById("hindi");
+    let english = document.getElementById("english");
+    let maths = document.getElementById("maths");
+    let btn = document.getElementById("btn");
+    let sum = document.getElementById("sum");
+    let per = document.getElementById("per");
+    let grade = document.getElementById("grade");
+
+    function check() {
+        sum.value=Number(hindi.value) + Number(english.value) + Number(maths.value);
+        per.value = (sum.value / 300) * 100;
+
+        if (per.value >= 90) {
+            grade.value = "A";
+        }
+        else if (per.value >= 80) {
+            grade.value = "B";
+        }
+        else if (per.value >= 70) {
+            grade.value = "C";
+        }
+        else if (per.value >= 60) {
+            grade.value = "D";
+        }
+        else {
+            grade.value = "F";
+        }
+    }
+
+</script>
+</html>

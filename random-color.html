@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <style>
+        .main {
+            width: 80vw;
+            height: 80vh;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid green;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 5px #ccc;
+        }
+
+        .btn {
+            text-align: center;
+            margin: auto;
+        }
+
+
+        button {
+            font-size: 20px;
+            padding: 10px 30px;
+            margin: 20px;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 10px 1px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main"></div>
+    <div class="btn"><button>Click</button></div>
+</body>
+<script>
+
+    // let main = document.querySelector(".main");
+    // let btn = document.querySelector("btn");
+
+    // btn.addEventListener("click", ()=>{
+        
+    // let red = Math.floor(Math.random() * 225);
+    // let green = Math.floor(Math.random() * 225);
+    // let blue = Math.floor(Math.random() * 225);
+
+    // main.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    // });
+
+    let btn = document.querySelector("button");
+    btn.addEventListener("click", () => {
+        let red = Math.floor(Math.random() * 225);
+        let green = Math.floor(Math.random() * 225);
+        let blue = Math.floor(Math.random() * 225);
+        document.querySelector(".main").style.backgroundColor = `rgb(${red},${green},${blue})`;
+
+    })
+
+
+</script>
+
+</html>

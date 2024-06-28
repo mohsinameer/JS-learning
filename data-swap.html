@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        button {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <h1>Data 1</h1>
+    </div>
+    <div id="box2">
+        <h1>Data 2</h1>
+    </div>
+    <button id="btn" onclick="swap()">Click to Swap</button>
+
+    <!-- Program 6 - There are two image and a button. We need to swap the images after clicking the button  -->
+
+    <img src="https://fastly.picsum.photos/id/168/536/354.jpg?hmac=YVT9XyqbWBrJxY74bob-kGl5Q448lpGP3ZDtDIfV3lU"
+        id="img1">
+    <img src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+        id="img2">
+    <button id="btn1" onclick="swap1()">Swap</button>
+
+</body>
+<script>
+    let box1 = document.getElementById("box1");
+    let box2 = document.getElementById("box2");
+    let btn = document.getElementById("btn");
+    function swap() {
+
+        let temp = box1.innerHTML;
+        box1.innerHTML = box2.innerHTML;
+        box2.innerHTML = temp;
+
+    }
+
+
+    // Program 6 - There are two image and a button. We need to swap the images after clicking the button
+
+    let img1 = document.getElementById("img1");
+    let img2 = document.getElementById("img2");
+    let btn1 = document.getElementById("btn1");
+    function swap1() {
+
+        let temp = img1.src;
+        img1.src = img2.src;
+        img2.src = temp;
+    }
+    
+</script>
+
+</html>

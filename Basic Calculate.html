@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Program 1 SUM and Minus -->
+     <h1>Program 1 SUM and Minus</h1>
+
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button id="btn" onclick="add()">Add</button>
+    <button id="btn" onclick="minus()">Minus</button>
+    <input type="text" id="result">
+
+    <!-- Program 2 Simple Calculator  -->
+
+    <h1>Program 2 Simple Calculator</h1>
+
+    <input type="text" id="num3">
+    <select id="operator">
+        <option value="+">Add</option>
+        <option value="-">Minus</option>
+        <option value="*">Multiply</option>
+        <option value="/">Divide</option>
+    </select>
+    <input type="text" id="num4">
+    <button id="btn" onclick="calculate()">Calculate</button>
+    <input type="text" id="result1">
+
+
+</body>
+<script>
+
+    // program 1 SUM and Minus 
+
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+    let result = document.getElementById("result");
+    function add() {
+        result.value = Number(num1.value) + Number(num2.value);
+    }
+    function minus() {
+        result.value = Number(num1.value) - Number(num2.value);
+    }
+
+
+    // program 2 Simple Calculator 
+
+    let num3 = document.getElementById("num3");
+    let num4 = document.getElementById("num4");
+    let result1 = document.getElementById("result1");
+    function calculate() {
+        if (operator.value == "+") {
+            result1.value = Number(num3.value) + Number(num4.value);
+        }
+        if (operator.value == "-") {
+            result1.value = Number(num3.value) - Number(num4.value);
+        }
+        if (operator.value == "*") {
+            result1.value = Number(num3.value) * Number(num4.value);
+        }
+        if (operator.value == "/") {
+            result1.value = Number(num3.value) / Number(num4.value);
+        }
+
+    }
+
+    function calculate(){
+        let outputValue;
+        switch (operator.value){
+            case "+":
+                outputValue = Number(num3.value) + Number(num4.value);
+                break;
+            case "-":
+                outputValue = Number(num3.value) - Number(num4.value);
+                break;
+            case "*":
+                outputValue = Number(num3.value) * Number(num4.value);
+                break;
+            case "/":
+                outputValue = Number(num3.value) / Number(num4.value);
+                break;
+            default:
+                outputValue = 0;
+                break;
+
+        }
+        result1.value = outputValue;
+    }
+
+</script>
+
+</html>

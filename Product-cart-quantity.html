@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product cart Quantity</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .product {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            text-align: center;
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 10px #ccc;
+        }
+        .product img{
+            width: 280px;
+            height: 280px;
+            border-radius: 10px;
+        }
+        .product h1{
+            font-size: 30px;
+            color: rgb(37, 151, 250);
+            margin: 20px;
+        }
+        .product h6{
+            font-size: 20px;
+            color: rgb(37, 151, 250);
+            margin: 20px;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            margin: 0 20px;
+            background-color: rgb(37, 151, 250);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 30px;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <img src="https://cdn.prod.website-files.com/5ee0a01b09389eebf4c09b45/6418a5cbfc02010152993d9c_Ai-Product-Image-Can-White-Background-Before-Mobile.webp" alt="">
+        <h1>Product cart Quantity</h1>
+        <h6>Price</h6>
+        <button id="add"> + </button>
+        <button id="count"> 0 </button>
+        <button id="minus"> - </button>
+    </div>
+</body>
+<script>
+    let add = document.getElementById("add");
+    let count = document.getElementById("count");
+    let minus = document.getElementById("minus");
+    add.addEventListener("click", ()=>{
+        // count.innerHTML = Number(count.innerHTML) + 1;
+        minus.disabled=false;
+        let oldCount = Number(count.innerText);
+        if(oldCount<5)
+        {
+            count.innerText = oldCount + 1;
+        }
+        else{
+            add.disabled=true;
+        }
+    })
+    minus.addEventListener("click", ()=>{
+        add.disabled=false;
+        let oldCount = Number(count.innerText);
+        if(oldCount>0)
+        {
+            count.innerText = oldCount - 1;
+        }
+        else{
+            minus.disabled=true;
+        }
+    })
+
+    // minus.addEventListener("click", ()=>{
+    //     count.innerHTML = Number(count.innerHTML) - 1;
+    // })
+
+</script>
+</html>

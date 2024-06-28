@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <!-- Program 1  -->
+
+    <!-- <input type="password" id="pass"/> 
+    <button id="btn" onClick="change()">Show</button> -->
+
+
+    <!-- Program 2 SUM and Minus -->
+
+    <!-- 
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button id="btn" onclick="add()">Add</button>
+    <button id="btn" onclick="minus()">Minus</button>
+    <input type="text" id="result"> -->
+
+
+    <!-- Program 3 - Even ODD  -->
+
+    <!-- <input type="text" id="num"> 
+    <button id="btn" onclick="check()">Check</button>
+    <input type="text" id="result"> -->
+
+
+
+    <!-- Program 4 - Calculation By choosing operator from Dropdown option  -->
+
+
+    <!-- <input type="text" id="num1">
+
+    <select id="operator">
+        <option value="add">Add</option>
+        <option value="sub">Sub</option>
+        <option value="mul">Mul</option>
+        <option value="div">Div</option>
+    </select>
+
+    <input type="text" id="num2">
+
+    <button id="btn" onclick="calculate()">Calculate</button>
+    <input type="text" id="result"> -->
+
+
+    <!-- Program 5 - Marksheet with five subject and calculating the total marks, total marks percentage and Grade.  -->
+    <!-- <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td><input type="text" id="english"></td>
+        </tr>
+        <tr>
+            <td>Hindi</td>
+            <td><input type="text" id="hindi"></td>
+        </tr>
+        <tr>
+            <td>Maths</td>
+            <td><input type="text" id="maths"></td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td><input type="text" id="science"></td>
+        </tr>
+     </table>
+
+     <button id="btn" onclick="calculate()">Calculate</button>
+     <table border="1">
+        <tr>
+            <th>Total Marks</th>
+            <th>Percentage</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="total"></td>
+            <td><input type="text" id="percentage"></td>
+            <td><input type="text" id="grade"></td>
+        </tr>
+     </table> -->
+
+
+    <!-- Program 6 - There are two image and a button. We need to swap the images after clicking the button  -->
+
+    <!-- <img src="https://fastly.picsum.photos/id/168/536/354.jpg?hmac=YVT9XyqbWBrJxY74bob-kGl5Q448lpGP3ZDtDIfV3lU"
+        id="img1">
+    <img src="https://fastly.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+        id="img2">
+    <button id="btn" onclick="swap()">Swap</button> -->
+
+
+</body>
+<script>
+
+    // Program 1 
+
+    // let targetTag1 = document.getElementById('pass');
+    // let targetTag2 = document.getElementById("btn");
+
+    // function change() {
+    //     console.log(targetTag1.type);
+    //     console.log(targetTag1.value);
+    //     console.log(targetTag2.innerHTML);
+
+    //     if(btn.innerHTML =="show")
+    //     {
+    //         targetTag1.type = "password";
+    //         btn.innerHTML = "hide";
+    //     }
+    //     else
+    //     {
+    //         targetTag1.type = "text";
+    //         btn.innerHTML = "show";
+    //     }
+    // }
+
+
+
+
+    // Program 2 :  SUM AND MINUS
+
+    // let num1 = document.getElementById("num1");
+    // let num2 = document.getElementById("num2");
+    // let result = document.getElementById("result");
+
+    // function add() {
+
+    //     result.value = Number(num1.value) + Number(num2.value);
+    //     console.log(result.value);
+    // }
+
+    // function minus(){
+
+    //     result.value = Number(num1.value) - Number(num2.value);
+    //     console.log(result.value);
+    // }
+
+
+
+
+    // PROGRAM 3 : EVEN ODD 
+
+    // let evenNum  = document.getElementById("num");
+    // let result = document.getElementById("result");
+
+    // function check(){
+
+    //     if(evenNum.value % 2 == 0)
+    //     {
+    //         result.value = "Even";
+    //     }
+    //     else
+    //     {
+    //         result.value = "Odd";
+    //     }
+    // }
+
+
+    // Program 4 - Calculation By choosing operator from Dropdown option 
+
+
+    // let num1 = document.getElementById("num1");
+    // let num2 = document.getElementById("num2");
+    // let result = document.getElementById("result");
+
+    // function calculate() {
+
+    //     if (operator.value == "add") {
+    //         result.value = Number(num1.value) + Number(num2.value);
+    //     }
+
+    //     if (operator.value == "sub") {
+    //         result.value = Number(num1.value) - Number(num2.value);
+    //     }
+
+    //     if (operator.value == "mul") {
+    //         result.value = Number(num1.value) * Number(num2.value);
+    //     }
+
+    //     if (operator.value == "div") {
+    //         result.value = Number(num1.value) / Number(num2.value);
+    //     }
+    // }
+
+
+
+
+    // Program 5 - Marksheet with five subject and calculating the total marks, total marks percentage and Grade. 
+
+    let english = document.getElementById("english");
+    let hindi = document.getElementById("hindi");
+    let maths = document.getElementById("maths");
+    let science = document.getElementById("science");
+    let total = document.getElementById("total");
+    let percentage = document.getElementById("percentage");
+    let grade = document.getElementById("grade");
+
+    function calculate() {
+
+        total.value = Number(english.value) + Number(hindi.value) + Number(maths.value) + Number(science.value);
+
+        percentage.value = (total.value / 400) * 100;
+
+        if (percentage.value >= 90) {
+            grade.value = "A";
+        }
+        else if (percentage.value >= 80) {
+            grade.value = "B";
+        }
+        else if (percentage.value >= 70) {
+            grade.value = "C";
+        }
+        else if (percentage.value >= 60) {
+            grade.value = "D";
+        }
+        else {
+            grade.value = "F";
+        }
+    }
+
+
+    // Program 6 - There are two image and a button. We need to swap the images after clicking the button
+
+    let img1 = document.getElementById("img1");
+    let img2 = document.getElementById("img2");
+    let btn = document.getElementById("btn");
+    function swap() {
+
+        let temp = img1.src;
+        img1.src = img2.src;
+        img2.src = temp;
+    }
+
+
+</script>
+
+</html>

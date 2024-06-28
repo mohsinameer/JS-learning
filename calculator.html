@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        
+table {
+    margin: auto;
+}
+
+table tr td button {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+table tr input{
+    width: 250px;
+    height: 50px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border: none;
+    text-align: right;
+}
+    </style>
+
+</head>
+
+<body>
+    <table border="1" cellSpacing="0">
+        <tr>
+            <td><button>C</button></td>
+            <td colspan="3"><input type="text"></td>
+        </tr>
+        <tr>
+            <td><button>+</button></td>
+            <td><button>1</button></td>
+            <td><button>2</button></td>
+            <td><button>3</button></td>
+        </tr>
+
+        <tr>
+            <td><button>-</button></td>
+            <td><button>4</button></td>
+            <td><button>5</button></td>
+            <td><button>6</button></td>
+        </tr>
+
+        <tr>
+            <td><button>*</button></td>
+            <td><button>7</button></td>
+            <td><button>8</button></td>
+            <td><button>9</button></td>
+        </tr>
+
+        <tr>
+            <td><button>/</button></td>
+            <td><button>.</button></td>
+            <td><button>0</button></td>
+            <td><button>=</button></td>
+        </tr>
+
+
+    </table>
+</body>
+<script>
+    let table = document.querySelector("table");
+    let input = document.querySelector("input");
+
+    table.addEventListener("click", (event) => {
+        let targetPoint = event.target;
+
+        if (targetPoint.tagName == "BUTTON") {
+            let oldValue = input.value;
+
+            if(targetPoint.innerHTML=="C"){
+                input.value='';
+            }
+
+            else if(targetPoint.innerHTML=="="){
+                input.value=eval(input.value);
+            }
+
+            else{
+                
+        }
+    })
+</script>
+
+</html>

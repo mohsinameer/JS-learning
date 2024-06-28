@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 1320px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            flex-basis: 23%;
+            margin: 1%;
+        }
+
+        .item img {
+            width: 100%;
+        }
+
+        .overlayBox {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .overlayBoxShow {
+            display: block;
+        }
+
+        .zoomImg {
+            width: 700px;
+            height: 500px;
+            background: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transition: 0.7s ;
+            transform: translate(-50%, -50%) scale(0, 0);
+            /* display: none; */
+        }
+
+        .zoomImgShow {
+            transform: translate(-50%, -50%) scale(1, 1);
+            /* display: block; */
+        }
+
+        .zoomImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .zoomImg span {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlayBox"></div>
+    <div class="zoomImg">
+        <img src="" alt="">
+        <span>&times;</span>
+    </div>
+
+    <div class="main">
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1499438182938-87d87862e154?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1499438182938-87d87862e154?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1499438182938-87d87862e154?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+
+    </div>
+
+</body>
+
+
+<!-- JaveScript  Start-->
+
+<script>
+
+    let main = document.querySelector(".main");
+    let overlayBox = document.querySelector(".overlayBox")
+    let zoomImg = document.querySelector(".zoomImg")
+    let img = document.querySelector(".zoomImg img")
+    let span = document.querySelector(".zoomImg span")
+    let item = document.querySelectorAll(".item");
+
+
+    main.addEventListener("click", (event) => {
+        if (event.target.tagName == "IMG") {
+            let currentSrc = event.target.src;
+            overlayBox.classList.add("overlayBoxShow");
+            zoomImg.classList.add("zoomImgShow");
+            img.src = currentSrc;
+        }
+
+        span.addEventListener("click", () => {
+            overlayBox.classList.remove("overlayBoxShow");
+            zoomImg.classList.remove("zoomImgShow");
+        })
+
+    })
+
+</script>
+
+</html>
