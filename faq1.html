@@ -35,13 +35,16 @@
             
             line-height: 25px;
             max-height: 0px;
-            opacity: 0;
-            transition: 0.5s;
+            overflow: hidden ;
+            transform: scaleY(0);
+            transition:0.5s transform ;
+            
         }
         .activeAns{
             max-height: 500px !important;
-            opacity: 1 !important;
+            overflow: visible !important;
             padding: 10px;
+            transform: scaleY(1) !important;
         }
         .faqItems span{
             position: absolute;
@@ -86,10 +89,48 @@
 
 <script>
     let faqOuter=document.querySelector(".faqOuter");
+    let allQuestion=document.querySelectorAll(".faqItems h2")
+
+
     faqOuter.addEventListener("click",(event)=>{
         if(event.target.tagName=="H2"){
-            event.target.nextElementSibling.classList.toggle('activeAns')
+            // console.log(event.target.parentNode.previousElementSibling)
+            
+           
+            // allQuestion.forEach((element)=>{
+
+            //     if(element.innerHTML!=event.target.innerHTML){
+            //         element.children[0].innerHTML="+" 
+            //         let ans=element.nextElementSibling
+            //         ans.classList.remove('activeAns')
+            //     }
+            // })
+
+           if(event.target.children[0].innerHTML=="+"){
+              event.target.children[0].innerHTML="-"
+
+              event.target.nextElementSibling.classList.add('activeAns')
+           }
+           else{
+            console.log("Hello")
+            event.target.children[0].innerHTML="+"
+
+             event.target.nextElementSibling.classList.remove('activeAns')
+           }
+
+           
+            
+
         }
     })
+
+
+    // let l=[10,20,30]
+    // l.forEach((v)=>{
+    //     if(v!=10){
+    //         console.log(v)
+    //     }
+    // })
+
 </script>
 </html>
